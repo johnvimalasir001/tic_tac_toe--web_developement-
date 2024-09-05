@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "styles.css">
-    <script src = " script.js" defer></script>
-    <title>Document</title>
-
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    
-   <div class ="board" id="board">
-    <div class="cell" data-cell></div>
-    <div class="cell"data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell"data-cell></div>
-    <div class="cell"data-cell></div>
-    <div class="cell"data-cell></div>
-    <div class="cell"data-cell></div>
-    <div class="cell"data-cell></div>
-   </div>
+    <div class="home" id="home">
+      <div class="row">
+        <div class="col">
+          <div class="left-side"></div>
+        </div>
+        <div class="homeBody">
+          <h1>TIC-TA<span style="color: white;">C-TOE</span></h1>
+  
+           <div class = "homeContent" id="homeContent">
 
-   <div class="winning-message" id="winningMessage">
-     <div data-winning-message-text></div>
-     <button id="restartButton">Restart</button>
-   </div>
+              <div style="margin: 20px;">
+                  <div style="padding-bottom: 10px;">
+                      <label for="xPlayer"><b>X Player's Name</b></label>
+                  </div>
+                  <div>
+                    <input type="text" id="xPlayer" style="width: 250px; height: 35px; font-size: 14px; padding: 8px;" placeholder="Enter your name">
+                  </div>
+              </div>
+              
+              <div style="margin-top: 40px;">
+                <button id="playButton">Start</button>
+              </div>
+  
+              <div style="margin: 20px;">
+                  <div style="padding-bottom: 10px;">
+                      <label for="oPlayer" style="color: white;"><b>O Player's Name</b></label>
+                  </div>
+                  <div>
+                    <input type="text" id="oPlayer" style="width: 250px; height: 35px; font-size: 14px; padding: 8px;" placeholder="Enter your name">
+                  </div>
+              </div>
+        </div>
+      </div>
+        <div class="col">
+          <div class="right-side"></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="emptyBoard" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+
+    <div class="winning-message" id="winningMessage">
+        <div data-winning-message-text></div>
+        <button id="restartButton">Restart</button>
+    </div>
 </body>
 </html>

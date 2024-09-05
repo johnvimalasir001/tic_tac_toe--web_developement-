@@ -6,34 +6,87 @@
     --cell-size: 100px;
     --mark-size: calc(var(--cell-size)* .9);
 }
+
 body{
     margin: 0;
 }
 
+.home.hide,
+.emptyBoard {
+    display: none;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    background-color: #fff1e1;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.right-side {
+    background-color: #1d3c45;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.homeBody {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .board {
     width: 100vw;
     height: 100vh;
+    background-color: beige;
     display: grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3,auto);
-   
 }
 
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
     border:1px solid black;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     cursor: pointer;
+    margin: 5px;
+    border-radius: 10%;
 }
 
-.cell:first-child,
+/* .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
     border-top: none;
@@ -51,7 +104,7 @@ body{
 .cell:nth-child(8),
 .cell:nth-child(7) {
     border-bottom: none;
-}
+} */
 
 .cell.x,
 .cell.circle {
@@ -143,4 +196,22 @@ body{
 
 .winning-message.show {
     display: flex;
+}
+
+.homeContent button {
+    height: calc(var(--cell-size)*1.5);
+    width:calc(var(--cell-size)*1.5);
+    border-radius: 100%;
+    border:none;
+    background-color: #d2601a;
+    color:white;
+    font-size: 30px;
+
+}
+
+.homeContent{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    
 }
