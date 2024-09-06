@@ -10,7 +10,9 @@ const WINNING_COMBINATIONS = [
     [0, 4, 8],
     [2, 4, 6]
 ]
+
 const cellElements = document.querySelectorAll('[data-cell]')
+const gameContainer = document.getElementById('game-container')
 const board = document.getElementById('board')
 const home = document.getElementById('home')
 const winningMessageElement = document.getElementById('winningMessage')
@@ -19,7 +21,6 @@ const winningMessageTextElement = document.querySelector('[data-winning-message-
 let xPlayerName
 let oPlayerName
 const playButton = document.getElementById('playButton')
-
 let circleTurn
 
 playButton.addEventListener('click', gameStart, { once: true })
@@ -30,8 +31,7 @@ function gameStart() {
     xPlayerName = document.getElementById('xPlayer').value
     oPlayerName = document.getElementById('oPlayer').value
     home.classList.add('hide');
-    board.classList.remove('emptyBoard');
-    board.classList.add('board')
+    gameContainer.classList.remove('hide');
     startGame()
 
 
@@ -89,10 +89,14 @@ function swapTurns() {
 function setBoardHoverClass() {
     board.classList.remove(X_CLASS)
     board.classList.remove(CIRCLE_CLASS)
-    if(circleTurn) {
+    const currentPlayerText = document.getElementById('currentPlayer')
+
+    if (circleTurn) {
         board.classList.add(CIRCLE_CLASS)
-    }else {
+        currentPlayerText.innerText = `Player's Turn: ${oPlayerName}`
+    } else {
         board.classList.add(X_CLASS)
+        currentPlayerText.innerText = `Player's Turn: ${xPlayerName}`
     }
 }
 

@@ -9,15 +9,15 @@
 </head>
 <body>
     <div class="home" id="home">
+      
       <div class="row">
         <div class="col">
           <div class="left-side"></div>
         </div>
+        <div class="xSymbol"></div>
         <div class="homeBody">
           <h1>TIC-TA<span style="color: white;">C-TOE</span></h1>
-  
            <div class = "homeContent" id="homeContent">
-
               <div style="margin: 20px;">
                   <div style="padding-bottom: 10px;">
                       <label for="xPlayer"><b>X Player's Name</b></label>
@@ -40,6 +40,7 @@
                   </div>
               </div>
         </div>
+        <div class="oSymbol"></div>
       </div>
         <div class="col">
           <div class="right-side"></div>
@@ -47,21 +48,25 @@
       </div>
     </div>
 
-    <div class="emptyBoard" id="board">
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-    </div>
+    <div class="game-container hide" id="game-container">
+      <div class="current-player" id="currentPlayer">Player's Turn: </div>
+      <div class="board" id="board">
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+      </div>
+  </div>
+  
 
-    <div class="winning-message" id="winningMessage">
-        <div data-winning-message-text></div>
-        <button id="restartButton">Restart</button>
-    </div>
+  <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</button>
+  </div>
 </body>
 </html>
